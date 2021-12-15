@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "aksolmes-6250"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "aksolmes-6250"
+  template:
+    metadata:
+      labels:
+        app: "aksolmes-6250"
+    spec:
+      containers:
+        - name: "aksolmes-6250"
+          image: "containerregistryolmes.azurecr.io/aksolmes"
+          ports:
+          - containerPort: 8080
